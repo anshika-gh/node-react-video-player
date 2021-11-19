@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 
 app.get('/video', (req, res) => {
     const range = req.headers.range;
@@ -27,4 +27,4 @@ app.get('/video', (req, res) => {
     stream.pipe(res);
 });
 
-app.listen('3000');
+app.listen(port);
